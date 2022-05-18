@@ -2,8 +2,10 @@ const ligne = document.querySelectorAll('.select');
 //console.log(ligne);
 //boucle sur toutes lignes
 ligne.forEach(e=>{
+    
     //ajout d'un écouteur d'événement sur la liste déroulante
     e.children[2].children[0].addEventListener('click', ()=>{
+        console.log(e.children[2].children[0].childNodes);
         //récupération de la valeur sélectionnée dans la liste déroulante
         let valeur = e.children[2].children[0].value;
         //récupération de l'url du lien

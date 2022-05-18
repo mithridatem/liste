@@ -3,6 +3,7 @@ table{
 }
 .edit{
     width: 1em;
+    padding-left: 1em;
 }
 th{
     width: 5em;
@@ -12,5 +13,4 @@ th{
 td{
     padding-left: 1em;
 }
-
 
