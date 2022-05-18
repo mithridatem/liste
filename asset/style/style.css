@@ -1,0 +1,16 @@
+table{
+    border-spacing: 0px;
+}
+.edit{
+    width: 1em;
+}
+th{
+    width: 5em;
+    background-color: rgb(225, 167, 20);
+    color: white;
+}
+td{
+    padding-left: 1em;
+}
+
+
