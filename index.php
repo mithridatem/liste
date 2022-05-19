@@ -36,4 +36,8 @@
         echo "<script>let error = document.querySelector('#error');
         error.innerHTML = 'Veuillez sélectionner une catégorie, clic dans la liste pour confirmer la sélection'</script>";
     }
+    if(isset($_GET['name']) AND isset($_GET['first'])){
+        echo '<script>let error = document.querySelector("#error")
+        error.innerHTML = "Utilisateur : '.$_GET['name'].' '.$_GET['first'].' a été mis à jour"</script>';
+    }
 ?>

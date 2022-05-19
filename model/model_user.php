@@ -57,10 +57,12 @@
                 die('Erreur : '.$e->getMessage());
             }
         }
-        public function showUsers($bdd):array{
+        public function showUsersById($bdd, $id):array{
             try{
-                $req = $bdd->prepare('SELECT * FROM user');
-                $req->execute();
+                $req = $bdd->prepare('SELECT * FROM user WHERE id_user = :id_user');
+                $req->execute(array(
+                    'id_user' => $id,
+                ));
                 $data = $req->fetchAll(PDO::FETCH_ASSOC);
                 return $data;
             }
@@ -85,9 +87,7 @@
                 //affichage d'une exception en cas d’erreur
                 die('Erreur : '.$e->getMessage());
             }
-
         }
-        
     }
 
 ?>

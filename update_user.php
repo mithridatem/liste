@@ -15,8 +15,10 @@
             $user = new User();
             //appel de la méthode update
             $user->updateRoleUser($bdd, $_GET['id'], $_GET['id_role']);
+            //récupération du user update
+            $name = $user->showUsersById($bdd, $_GET['id']);
             //redirection
-            header('Location: ./index.php');
+            header('Location: ./index.php?name='.$name[0]['name_user'].'&first='.$name[0]['first_name_user'].'');
         }
     } 
     else{
