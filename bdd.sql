@@ -15,7 +15,7 @@ add constraint fk_role
 foreign key(id_role)
 references role(id_role);
 INSERT INTO role(name_role) VALUE
-('Auncun'),
+('Aucun'),
 ('Utilisateur'),
 ('Moderateur'),
 ('Admin');

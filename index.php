@@ -30,7 +30,10 @@
             </tr>';
     }
     echo '</table></div></form>
-    <script src="./asset/script/script.js"></script></body>
+    <script src="./asset/script/script.js"></script><div id="error"></div></body>
     </html>';
-
+    if(isset($_GET['error'])){
+        echo "<script>let error = document.querySelector('#error');
+        error.innerHTML = 'Veuillez sélectionner une catégorie, clic dans la liste pour confirmer la sélection'</script>";
+    }
 ?>
