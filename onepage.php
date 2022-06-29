@@ -83,10 +83,12 @@
                 <td><a href="./update_user.php?id='.$value['id_user'].'"><img src="./asset/image/edit.png" class="edit"></a></td>
             </tr>';
     }
-    //fin du tableau et import script JS
-    echo '</table></div></form>
+?>
+    <!-- fin du tableau et import script JS -->
+    </table></div></form>
     <script src="./asset/script/script.js"></script><div id="error"></div></body>
-    </html>';
+    </html>
+<?php
     /*---------------------------------------------------
                         Gestion des erreurs
     ---------------------------------------------------*/
