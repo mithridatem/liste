@@ -16,3 +16,6 @@ ligne.forEach(e=>{
         e.children[4].children[0].innerHTML = "<a href="+url+"&id_role="+valeur+"><img src='./asset/image/edit.png' class='edit'></a>";
     })
 });
+function update(){
+    setTimeout(()=>{console.log("test");}, 300);
+}

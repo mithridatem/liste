@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--Liste des utilisateurs-->
-    <form action="./test.php" method="post">
+    <form action="" method="post">
     <div id="container">
         <table id="liste">
             <tr>
@@ -137,7 +137,7 @@
         //test si id_role est vide
         if($_GET['id_role']==""){
             //redirection
-            header('Location: ./index.php?error');
+            header('Location: ./onepage.php?error');
         }
         //sinon
         else{
@@ -146,13 +146,9 @@
             //récupération du user mis à jour
             $name = showUsersById($bdd, $_GET['id']);
             //redirection
-            header('Location: ./index.php?name='.$name[0]['name_user'].'&first='.$name[0]['first_name_user'].'');
+            header('Location: ./onepage.php?name='.$name[0]['name_user'].'&first='.$name[0]['first_name_user'].'');
         }
     } 
-    else{
-        //redirection
-        header('Location: ./index.php?error');
-    }
 
     /*---------------------------------------------------
                  Gestion des messages d'erreurs
@@ -161,11 +157,15 @@
     //test si il y à une erreur
     if(isset($_GET['error'])){
         echo "<script>let error = document.querySelector('#error');
-        error.innerHTML = 'Veuillez sélectionner une catégorie, clic dans la liste pour confirmer la sélection'</script>";
+        error.textContent = 'Veuillez sélectionner une catégorie, clic dans la liste pour confirmer la sélection'</script>";
     }
-    //test si un utilisateur à été mis à jours
+    //test si un utilisateur à été mis à jour (affiche le nom de l'utilisateur)
     if(isset($_GET['name']) AND isset($_GET['first'])){
-        echo '<script>let error = document.querySelector("#error")
-        error.innerHTML = "Utilisateur : '.$_GET['name'].' '.$_GET['first'].' a été mis à jour"</script>';
+        echo '<script>
+                setTimeout(()=>{document.location.href="./onepage.php";}, 2000);
+                let error = document.querySelector("#error");
+                error.textContent = "Utilisateur : '.$_GET['name'].' '.$_GET['first'].' a été mis à jour";
+        </script>';
+
     }
 ?>
